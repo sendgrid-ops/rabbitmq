@@ -37,13 +37,19 @@
                                   {exit_on_close,<%= node['rabbitmq']['tcp_listen_exit_on_close'] %>},
                                   {keepalive,<%= node['rabbitmq']['tcp_listen_keepalive'] %>}]},
 <% else -%>
-   {tcp_listeners, []},
+  {tcp_listeners, []},
+<% end %>
+<% if node['rabbitmq']['disk_free_limit'] -%>
+    {disk_free_limit, <%= node['rabbitmq']['disk_free_limit'] %>},
 <% end %>
 <% if node['rabbitmq']['disk_free_limit_relative'] -%>
     {disk_free_limit, {mem_relative, <%= node['rabbitmq']['disk_free_limit_relative'] %>}},
 <% end %>
 <% if node['rabbitmq']['vm_memory_high_watermark'] -%>
     {vm_memory_high_watermark, <%= node['rabbitmq']['vm_memory_high_watermark'] %>},
+<% end %>
+<% if node['rabbitmq']['vm_memory_high_watermark_paging_ratio'] -%>
+    {vm_memory_high_watermark_paging_ratio, <%= node['rabbitmq']['vm_memory_high_watermark_paging_ratio'] %>},
 <% end %>
     {default_user, <<"<%= node['rabbitmq']['default_user'] %>">>},
     {default_pass, <<"<%= node['rabbitmq']['default_pass'] %>">>}

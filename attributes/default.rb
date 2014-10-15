@@ -1,5 +1,5 @@
 # Latest RabbitMQ.com version to install
-default['rabbitmq']['version'] = '3.1.5'
+default['rabbitmq']['version'] = '3.3.5'
 # The distro versions may be more stable and have back-ported patches
 default['rabbitmq']['use_distro_version'] = false
 
@@ -35,10 +35,13 @@ default['rabbitmq']['kernel']['inet_dist_use_interface'] = nil
 default['rabbitmq']['cluster'] = false
 default['rabbitmq']['cluster_disk_nodes'] = []
 default['rabbitmq']['erlang_cookie'] = 'AnyAlphaNumericStringWillDo'
+default['rabbitmq']['cluster_partition_handling'] = 'ignore'
 
 # resource usage
+default['rabbitmq']['disk_free_limit'] = nil
 default['rabbitmq']['disk_free_limit_relative'] = nil
 default['rabbitmq']['vm_memory_high_watermark'] = nil
+default['rabbitmq']['vm_memory_high_watermark_paging_ratio'] = nil
 default['rabbitmq']['max_file_descriptors'] = 1024
 default['rabbitmq']['open_file_limit'] = nil
 
@@ -57,6 +60,7 @@ default['rabbitmq']['web_console_ssl'] = false
 default['rabbitmq']['web_console_ssl_port'] = 15_671
 
 # tcp listen options
+default['rabbitmq']['tcp_listen'] = true
 default['rabbitmq']['tcp_listen_packet'] = 'raw'
 default['rabbitmq']['tcp_listen_reuseaddr']  = true
 default['rabbitmq']['tcp_listen_backlog'] = 128

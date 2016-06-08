@@ -2,6 +2,10 @@ rabbitmq Cookbook CHANGELOG
 ===========================
 This file is used to list changes made in each version of the rabbitmq cookbook.
 
+v3.3.1 (2016-06-08)
+------------------
+- Added iptables recipe (instead of calling in the sensu_server one)
+
 v3.3.0 (2014-08-28)
 -------------------
 - Bump default rabbitmq-server version to 3.3.5

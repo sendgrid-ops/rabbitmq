@@ -25,6 +25,7 @@ class Chef::Resource
 end
 
 include_recipe 'erlang'
+include_recipe 'rabbitmq::_iptables'
 
 ## Install the package
 case node['platform_family']

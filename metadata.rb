@@ -108,3 +108,5 @@ attribute 'rabbitmq/local_erl_networking',
 attribute 'rabbitmq/erl_networking_bind_address',
   :display_name => 'Erl Networking Bind Address',
   :description => 'Bind Rabbit and erlang networking to an address'
+
+chef_version '>= 12.6'
